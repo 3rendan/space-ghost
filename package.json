@@ -1,0 +1,31 @@
+{
+  "name": "space-ghost",
+  "version": "1.0.0",
+  "description": "Self-hosted Ghost blog for space-ghost.org",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ghost run",
+    "start": "ghost start",
+    "stop": "ghost stop",
+    "restart": "ghost restart",
+    "install": "ghost install local",
+    "setup": "ghost setup",
+    "backup": "./scripts/backup.sh",
+    "deploy": "./scripts/deploy.sh",
+    "sync": "./scripts/sync.sh"
+  },
+  "keywords": [
+    "ghost",
+    "blog",
+    "self-hosted",
+    "raspberry-pi"
+  ],
+  "author": "Space Ghost",
+  "license": "MIT",
+  "devDependencies": {
+    "ghost-cli": "^1.28.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

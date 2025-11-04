@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}"{{#match @custom.color_scheme "Dark"}} class="dark-mode"{{/match}}{{#match @custom.color_scheme "Auto"}} class="auto-color"{{/match}}>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{meta_title}}</title>
+    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}">
+    <link rel="stylesheet" type="text/css" href="{{asset "css/dark.css"}}" media="(prefers-color-scheme: dark)">
+    
+    {{ghost_head}}
+    
+    <style>
+        :root {
+            --ghost-accent-color: {{@site.accent_color}};
+        }
+    </style>
+</head>
+<body class="{{body_class}}">
+    <div class="site-wrapper">
+        {{> header}}
+        
+        <main class="site-main">
+            {{{body}}}
+        </main>
+        
+        {{> footer}}
+    </div>
+
+    <script src="{{asset "js/main.js"}}"></script>
+    {{ghost_foot}}
+</body>
+</html>

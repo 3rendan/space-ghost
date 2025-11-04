@@ -1,0 +1,36 @@
+<header class="site-header">
+    <div class="container">
+        <div class="site-header-content">
+            {{#match @custom.navigation_layout "Logo in the middle"}}
+                <nav class="site-nav left">
+                    {{navigation type="primary" limit="3"}}
+                </nav>
+            {{/match}}
+            
+            <div class="site-brand">
+                {{#if @site.logo}}
+                    <a href="{{@site.url}}" class="site-logo">
+                        <img src="{{@site.logo}}" alt="{{@site.title}}">
+                    </a>
+                {{else}}
+                    <a href="{{@site.url}}" class="site-title">
+                        {{@site.title}}
+                    </a>
+                {{/if}}
+                {{#if @site.description}}
+                    <p class="site-description">{{@site.description}}</p>
+                {{/if}}
+            </div>
+            
+            {{#match @custom.navigation_layout "Logo in the middle"}}
+                <nav class="site-nav right">
+                    {{navigation type="primary" offset="3"}}
+                </nav>
+            {{else}}
+                <nav class="site-nav">
+                    {{navigation type="primary"}}
+                </nav>
+            {{/match}}
+        </div>
+    </div>
+</header>

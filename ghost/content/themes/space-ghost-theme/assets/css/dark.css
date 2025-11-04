@@ -1,0 +1,73 @@
+/* Space Ghost Theme - Dark Mode */
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #1a1a1a;
+        color: #e0e0e0;
+    }
+    
+    .site-header {
+        border-bottom-color: #333;
+    }
+    
+    .site-title {
+        color: #e0e0e0;
+    }
+    
+    .site-description {
+        color: #aaa;
+    }
+    
+    .site-nav a {
+        color: #aaa;
+    }
+    
+    .site-nav a:hover {
+        color: var(--ghost-accent-color);
+    }
+    
+    .post-card {
+        background: #2a2a2a;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    
+    .post-card:hover {
+        box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+    
+    .post-card-title a {
+        color: #e0e0e0;
+    }
+    
+    .post-card-excerpt {
+        color: #aaa;
+    }
+    
+    .site-footer {
+        background: #2a2a2a;
+        border-top-color: #333;
+    }
+    
+    .footer-info p {
+        color: #aaa;
+    }
+}
+
+/* Force dark mode */
+.dark-mode body {
+    background: #1a1a1a;
+    color: #e0e0e0;
+}
+
+.dark-mode .site-header {
+    border-bottom-color: #333;
+}
+
+.dark-mode .post-card {
+    background: #2a2a2a;
+}
+
+.dark-mode .site-footer {
+    background: #2a2a2a;
+    border-top-color: #333;
+}

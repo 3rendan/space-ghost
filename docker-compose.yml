@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  ghost:
+    image: ghost:5-alpine
+    restart: unless-stopped
+    ports:
+      - 2368:2368
+    depends_on:
+      - db
+    environment:
+      # see https://ghost.org/docs/config/#configuration-options
+      database__client: mysql2
+      database__connection__host: db
+      database__connection__user: ghost
+      database__connection__password: ghostdbpass
+      database__connection__database: ghost
+      # this url value is just for bootstrapping, we'll change it later
+      url: http://localhost:2368
+      # contrary to the default mentioned in the linked docs, this image defaults to NODE_ENV=production (so development mode needs to be explicitly specified if desired)
+      NODE_ENV: development
+    volumes:
+      - ./ghost/content:/var/lib/ghost/content
+      - ./ghost/config.production.json:/var/lib/ghost/config.production.json
+      - ./ghost/config.development.json:/var/lib/ghost/config.development.json
+
+  db:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: ghost
+      MYSQL_USER: ghost
+      MYSQL_PASSWORD: ghostdbpass
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+
+volumes:
+  ghost-content:
+  mysql-data:

@@ -1,0 +1,25 @@
+<footer class="site-footer">
+    <div class="container">
+        <div class="site-footer-content">
+            <div class="footer-info">
+                <p>&copy; {{date format="YYYY"}} <a href="{{@site.url}}">{{@site.title}}</a></p>
+                <p>{{@site.description}}</p>
+            </div>
+            
+            <div class="footer-links">
+                <nav class="footer-nav">
+                    {{navigation type="secondary"}}
+                </nav>
+                
+                <div class="social-links">
+                    {{#if @site.twitter}}
+                        <a href="{{twitter_url @site.twitter}}" aria-label="Twitter">Twitter</a>
+                    {{/if}}
+                    {{#if @site.facebook}}
+                        <a href="{{facebook_url @site.facebook}}" aria-label="Facebook">Facebook</a>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,18 @@
+{{!< default}}
+
+{{#if @custom.show_publication_cover}}
+    <div class="site-hero">
+        <div class="container">
+            <h1 class="hero-title">{{@site.title}}</h1>
+            <p class="hero-description">{{@site.description}}</p>
+        </div>
+    </div>
+{{/if}}
+
+<div class="post-feed">
+    {{#foreach posts}}
+        {{> post-card}}
+    {{/foreach}}
+</div>
+
+{{pagination}}
